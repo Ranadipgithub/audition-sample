@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { CircuitBoard } from "lucide-react";
 import { Link } from "react-router-dom";
+import CircuitBackground from "../components/CircuitBG";
 
 export default function Home() {
     return (
         <main className="min-h-screen gradient-bg  flex flex-col items-center justify-center p-4">
+            <CircuitBackground/>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
