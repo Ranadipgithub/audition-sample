@@ -41,7 +41,7 @@ export default function AuditionForm() {
         };
 
         try {
-            const response = await axios.post("http://localhost:5000/submit", transformedData, {
+            const response = await axios.post(`${VITE_BACKEND_URL}/submit`, transformedData, {
                 headers: { "Content-Type": "application/json" },
             });
             alert("Your application has been submitted successfully!");
