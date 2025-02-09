@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import axios from "axios";  
+import axios from "axios";
 import { questions } from "../assets/questions.js";
 import { QuestionRenderer } from "../components/QuestionRenderer.jsx";
 import { ChevronLeft, ChevronRight, Send } from "lucide-react";
@@ -35,13 +35,13 @@ export default function AuditionForm() {
     const submitAnswers = async () => {
         const transformedData = {
             answers: Object.entries(formData).map(([questionId, answer]) => ({
-                questionId: parseInt(questionId, 10), 
+                questionId: parseInt(questionId, 10),
                 answer: answer,
             })),
         };
 
         try {
-            const response = await axios.post(`${Process.env.VITE_BACKEND_URL}/submit`, transformedData, {
+            const response = await axios.post(`${process.env.VITE_BACKEND_URL}/submit`, transformedData, {
                 headers: { "Content-Type": "application/json" },
             });
             alert("Your application has been submitted successfully!");
@@ -53,7 +53,7 @@ export default function AuditionForm() {
             setIsSubmitting(false);
         }
     };
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!isComplete || isSubmitting) return;
