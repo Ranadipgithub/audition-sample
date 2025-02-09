@@ -7,10 +7,10 @@ const AnswerSchema = new mongoose.Schema({
 
 const ResponseSchema = new mongoose.Schema(
   {
-    answers: { type: [AnswerSchema], default: [] }, // Array of AnswerSchema, defaults to an empty array
+    answers: { type: [AnswerSchema], default: [] }, 
   },
   {
-    timestamps: true, // Automatically manage createdAt and updatedAt fields
+    timestamps: true,
   }
 );
 
